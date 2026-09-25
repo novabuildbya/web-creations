@@ -1,13 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>For Mahima ♡</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta http-equiv="refresh" content="0; url=index2.html">
+    <title>Our Little Chat</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
-    <p>Opening...</p>
+
+    <!-- =========================
+         SLIDE 1 - PASSWORD
+    ========================== -->
+
+    <section id="passwordPage" class="page password-page">
+
+        <div class="password-card">
+
+            <div class="lock">♡</div>
+
+            <h1>Welcome</h1>
+
+            <p>
+                A little private space<br>
+                just for our conversations.
+            </p>
+
+            <div class="password-box">
+
+                <input
+                    type="password"
+                    id="passwordInput"
+                    placeholder="Enter password"
+                    maxlength="10"
+                >
+
+                <button onclick="unlockChat()">
+                    Enter
+                </button>
+
+            </div>
+
+            <div id="passwordError"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SLIDE 2 - CHAT
+    ========================== -->
+
+    <section id="chatPage" class="page chat-page hidden">
+
+        <div class="chat-container">
+
+            <!-- HEADER -->
+
+            <header class="chat-header">
+
+                <div class="profile">
+
+                    <div class="profile-photo">
+                        ♡
+                    </div>
+
+                    <div>
+                        <h2>Beautiful</h2>
+                        <span>
+                            <i></i> our little chat
+                        </span>
+                    </div>
+
+                </div>
+
+                <button
+                    class="back-button"
+                    onclick="backToPassword()"
+                >
+                    ×
+                </button>
+
+            </header>
+
+
+            <!-- NAME SELECTOR -->
+
+            <div class="name-selector">
+
+                <span>You're chatting as:</span>
+
+                <button
+                    id="nitinButton"
+                    class="name-active"
+                    onclick="setSender('Nitin')"
+                >
+                    Nitin
+                </button>
+
+                <button
+                    id="beautifulButton"
+                    onclick="setSender('Beautiful')"
+                >
+                    Beautiful
+                </button>
+
+            </div>
+
+
+            <!-- MESSAGES -->
+
+            <main id="messages" class="messages">
+
+                <div class="empty-chat" id="emptyChat">
+
+                    <div>♡</div>
+
+                    <p>
+                        No messages yet.
+                    </p>
+
+                    <small>
+                        Start the conversation...
+                    </small>
+
+                </div>
+
+            </main>
+
+
+            <!-- MESSAGE AREA -->
+
+            <div class="message-area">
+
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Write something..."
+                    autocomplete="off"
+                    onkeydown="handleEnter(event)"
+                >
+
+                <button
+                    class="send-button"
+                    onclick="sendMessage()"
+                >
+                    ➤
+                </button>
+
+            </div>
+
+            <div id="chatStatus"></div>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
 </body>
 </html>

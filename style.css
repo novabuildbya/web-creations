@@ -1,0 +1,796 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
+
+
+/* =========================
+   BASIC
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "DM Sans", sans-serif;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 211, 224, 0.8),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(210, 225, 255, 0.8),
+            transparent 30%
+        ),
+        #f8f5f1;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+    width: 100%;
+    height: 100vh;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   PASSWORD PAGE
+========================= */
+
+.password-page {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.2),
+            rgba(255,225,235,0.3)
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            #f4c8d8,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            #cbdcff,
+            transparent 35%
+        );
+}
+
+
+/* Decorative circles */
+
+.password-page::before,
+.password-page::after {
+
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(5px);
+
+    opacity: 0.5;
+}
+
+.password-page::before {
+
+    width: 220px;
+    height: 220px;
+
+    background: #ffd9e5;
+
+    top: -70px;
+    left: -70px;
+}
+
+.password-page::after {
+
+    width: 260px;
+    height: 260px;
+
+    background: #d8e4ff;
+
+    bottom: -100px;
+    right: -80px;
+}
+
+
+/* Password Card */
+
+.password-card {
+
+    width: min(420px, 90%);
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.65);
+
+    border: 1px solid rgba(255,255,255,0.8);
+
+    border-radius: 28px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 70px rgba(70, 60, 80, 0.15);
+
+    position: relative;
+
+    z-index: 2;
+
+    animation: cardIn 0.8s ease;
+}
+
+@keyframes cardIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.lock {
+
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.8);
+
+    color: #b86b87;
+
+    font-size: 27px;
+}
+
+
+.password-card h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+
+    font-weight: 500;
+
+    color: #39323a;
+
+    margin-bottom: 10px;
+}
+
+
+.password-card p {
+
+    color: #766d73;
+
+    line-height: 1.7;
+
+    margin-bottom: 28px;
+}
+
+
+/* Password input */
+
+.password-box {
+
+    display: flex;
+
+    gap: 9px;
+
+    padding: 6px;
+
+    background: rgba(255,255,255,0.75);
+
+    border: 1px solid #eee5e9;
+
+    border-radius: 15px;
+}
+
+.password-box input {
+
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    padding: 12px;
+
+    font-size: 15px;
+
+    color: #333;
+}
+
+.password-box button {
+
+    border: none;
+
+    border-radius: 11px;
+
+    padding: 0 20px;
+
+    background: #453c48;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.password-box button:hover {
+
+    transform: translateY(-1px);
+
+    background: #5c4e60;
+}
+
+
+#passwordError {
+
+    min-height: 22px;
+
+    margin-top: 13px;
+
+    color: #c65c75;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   CHAT PAGE
+========================= */
+
+.chat-page {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255,215,225,0.6),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(215,225,255,0.7),
+            transparent 35%
+        ),
+        #f5f1ec;
+}
+
+
+/* Chat container */
+
+.chat-container {
+
+    width: min(700px, 100%);
+
+    height: min(760px, 94vh);
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: rgba(255,255,255,0.76);
+
+    border: 1px solid rgba(255,255,255,0.9);
+
+    border-radius: 27px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 70px rgba(65,55,65,0.16);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.chat-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 22px;
+
+    background: rgba(255,255,255,0.65);
+
+    border-bottom: 1px solid rgba(220,210,215,0.6);
+}
+
+
+.profile {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.profile-photo {
+
+    width: 47px;
+    height: 47px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4b8ca,
+            #d7c5e9
+        );
+
+    color: white;
+
+    font-size: 22px;
+}
+
+
+.profile h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    color: #39323a;
+}
+
+
+.profile span {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #8c8187;
+
+    font-size: 12px;
+}
+
+
+.profile span i {
+
+    width: 7px;
+    height: 7px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+
+    background: #72bd8a;
+}
+
+
+.back-button {
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f3edf0;
+
+    color: #766c73;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   NAME SELECTOR
+========================= */
+
+.name-selector {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 10px 20px;
+
+    border-bottom: 1px solid #eee8eb;
+
+    font-size: 11px;
+
+    color: #999096;
+}
+
+
+.name-selector button {
+
+    border: none;
+
+    border-radius: 20px;
+
+    padding: 6px 12px;
+
+    background: #eee9ed;
+
+    color: #766b72;
+
+    cursor: pointer;
+
+    font-size: 11px;
+}
+
+
+.name-selector button.name-active {
+
+    background: #453c48;
+
+    color: white;
+}
+
+
+/* =========================
+   MESSAGES
+========================= */
+
+.messages {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 25px 20px;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,220,230,0.25),
+            transparent 25%
+        ),
+        #f8f4ef;
+}
+
+
+/* Scrollbar */
+
+.messages::-webkit-scrollbar {
+
+    width: 6px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+
+    background: #d6cbd0;
+
+    border-radius: 10px;
+}
+
+
+/* Empty */
+
+.empty-chat {
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #aaa0a6;
+
+    text-align: center;
+}
+
+.empty-chat div {
+
+    font-size: 35px;
+
+    color: #d7a5b8;
+
+    margin-bottom: 10px;
+}
+
+.empty-chat p {
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.empty-chat small {
+
+    font-size: 11px;
+}
+
+
+/* Message */
+
+.message {
+
+    max-width: 75%;
+
+    padding: 11px 14px;
+
+    margin-bottom: 12px;
+
+    border-radius: 17px;
+
+    position: relative;
+
+    animation: messageIn 0.25s ease;
+}
+
+@keyframes messageIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(5px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* Nitin */
+
+.message.nitin {
+
+    margin-left: auto;
+
+    background: #dfd0f4;
+
+    color: #342b3c;
+
+    border-bottom-right-radius: 5px;
+}
+
+
+/* Beautiful */
+
+.message.beautiful {
+
+    margin-right: auto;
+
+    background: #f5d7df;
+
+    color: #3c3035;
+
+    border-bottom-left-radius: 5px;
+}
+
+
+.message-name {
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    margin-bottom: 4px;
+
+    opacity: 0.65;
+}
+
+
+.message-text {
+
+    font-size: 14px;
+
+    line-height: 1.45;
+
+    word-break: break-word;
+}
+
+
+.message-time {
+
+    margin-top: 5px;
+
+    font-size: 9px;
+
+    opacity: 0.45;
+
+    text-align: right;
+}
+
+
+/* =========================
+   MESSAGE INPUT
+========================= */
+
+.message-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 14px 16px;
+
+    background: rgba(255,255,255,0.75);
+
+    border-top: 1px solid #eee8eb;
+}
+
+
+.message-area input {
+
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 20px;
+
+    padding: 13px 16px;
+
+    background: #f4f0f2;
+
+    color: #333;
+
+    font-size: 14px;
+}
+
+
+.send-button {
+
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #453c48;
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.send-button:hover {
+
+    transform: scale(1.05);
+}
+
+
+#chatStatus {
+
+    min-height: 17px;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    color: #a0979d;
+
+    background: rgba(255,255,255,0.75);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .chat-page {
+
+        padding: 0;
+    }
+
+    .chat-container {
+
+        height: 100vh;
+
+        border-radius: 0;
+    }
+
+    .password-card {
+
+        padding: 35px 23px;
+    }
+
+    .password-card h1 {
+
+        font-size: 36px;
+    }
+
+    .message {
+
+        max-width: 82%;
+    }
+
+    .name-selector {
+
+        padding: 9px 12px;
+    }
+}
