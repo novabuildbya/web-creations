@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>A Little Birthday Surprise 🌷</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating background -->
+    <div class="background-glow"></div>
+    <div class="stars"></div>
+    <div class="petals" id="petals"></div>
+
+    <main id="birthdayApp">
+
+        <!-- ======================================
+             SLIDE 1 — SURPRISE OPENING
+        ======================================= -->
+
+        <section class="slide slide-1 active">
+
+            <div class="opening-decoration">
+                <span>✦</span>
+                <span>·</span>
+                <span>✧</span>
+            </div>
+
+            <div class="opening-card">
+
+                <div class="envelope-shadow"></div>
+
+                <div class="envelope" id="envelope">
+
+                    <div class="envelope-top"></div>
+
+                    <div class="envelope-front">
+
+                        <div class="seal">
+                            🌷
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="opening-text">
+
+                    <p class="tiny-label">
+                        A little surprise
+                    </p>
+
+                    <h1>
+                        Hey, Mahima
+                    </h1>
+
+                    <p>
+                        I made something<br>
+                        especially for your birthday.
+                    </p>
+
+                    <button
+                        class="primary-btn"
+                        onclick="openSurprise()"
+                    >
+                        Open your surprise ✨
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="bottom-note">
+                Tap the button to begin
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             SLIDE 2 — FIRST PHOTO
+        ======================================= -->
+
+        <section class="slide slide-2">
+
+            <div class="slide-number">
+                01 / 06
+            </div>
+
+            <div class="memory-intro">
+
+                <span class="eyebrow">
+                    A small beginning
+                </span>
+
+                <h2>
+                    Some people make
+                    ordinary moments
+                    feel a little nicer.
+                </h2>
+
+                <div class="line"></div>
+
+            </div>
+
+            <div class="portrait-stage">
+
+                <div class="soft-circle"></div>
+
+                <div class="portrait-frame">
+
+                    <div class="frame-corner corner-tl"></div>
+                    <div class="frame-corner corner-tr"></div>
+                    <div class="frame-corner corner-bl"></div>
+                    <div class="frame-corner corner-br"></div>
+
+                    <img
+                        src="photo1.jpg.jpeg"
+                        alt="Mahima"
+                    >
+
+                </div>
+
+                <div class="photo-caption">
+                    <span>little moment</span>
+                    <b>01</b>
+                </div>
+
+            </div>
+
+            <p class="slide-message">
+                And somehow, this photo felt like
+                the right one to start with. 🌷
+            </p>
+
+            <button
+                class="next-btn"
+                onclick="nextSlide()"
+            >
+                Continue
+                <span>→</span>
+            </button>
+
+        </section>
+
+
+        <!-- ======================================
+             SLIDE 3 — POLAROID MEMORIES
+        ======================================= -->
+
+        <section class="slide slide-3">
+
+            <div class="slide-number">
+                02 / 06
+            </div>
+
+            <div class="memory-heading">
+
+                <span>
+                    A few little memories
+                </span>
+
+                <h2>
+                    Three frames,
+                    three different moments.
+                </h2>
+
+            </div>
+
+            <div class="polaroid-area">
+
+                <!-- PHOTO 2 -->
+
+                <div class="polaroid p-one">
+
+                    <div class="tape"></div>
+
+                    <img
+                        src="photo2.jpg.jpeg"
+                        alt="Mahima"
+                    >
+
+                    <p>
+                        pretty little moment
+                    </p>
+
+                </div>
+
+
+                <!-- PHOTO 3 -->
+
+                <div class="polaroid p-two">
+
+                    <div class="tape"></div>
+
+                    <img
+                        src="photo3.jpg.jpeg"
+                        alt="Mahima"
+                    >
+
+                    <p>
+                        one for the memory
+                    </p>
+
+                </div>
+
+
+                <!-- PHOTO 4 -->
+
+                <div class="polaroid p-three">
+
+                    <div class="tape"></div>
+
+                    <img
+                        src="photo4.jpg.jpeg"
+                        alt="Mahima"
+                    >
+
+                    <p>
+                        just a little smile
+                    </p>
+
+                </div>
+
+            </div>
+
+            <p class="collage-note">
+                Not every memory needs a long story.
+                Sometimes a picture is enough. ✨
+            </p>
+
+            <button
+                class="next-btn"
+                onclick="nextSlide()"
+            >
+                Keep going
+                <span>→</span>
+            </button>
+
+        </section>
+
+
+        <!-- ======================================
+             SLIDE 4 — CINEMATIC PHOTO
+        ======================================= -->
+
+        <section class="slide slide-4">
+
+            <div class="cinematic-background">
+
+                <img
+                    src="photo5.jpg.jpeg"
+                    alt=""
+                >
+
+            </div>
+
+            <div class="cinematic-overlay"></div>
+
+            <div class="slide-number light">
+                03 / 06
+            </div>
+
+            <div class="cinematic-content">
+
+                <span class="cinematic-small">
+                    there are moments...
+                </span>
+
+                <h2>
+                    that somehow
+                    stay in your mind.
+                </h2>
+
+                <div class="cinematic-photo">
+
+                    <div class="glass-border"></div>
+
+                    <img
+                        src="photo5.jpg.jpeg"
+                        alt="Mahima"
+                    >
+
+                </div>
+
+                <p>
+                    This one deserved its own little frame.
+                </p>
+
+            </div>
+
+            <button
+                class="next-btn light-button"
+                onclick="nextSlide()"
+            >
+                One more ✨
+                <span>→</span>
+            </button>
+
+        </section>
+
+
+        <!-- ======================================
+             SLIDE 5 — SCRAPBOOK
+        ======================================= -->
+
+        <section class="slide slide-5">
+
+            <div class="slide-number">
+                04 / 06
+            </div>
+
+            <div class="scrapbook-title">
+
+                <span>
+                    little pieces
+                </span>
+
+                <h2>
+                    A tiny collection
+                    of moments 🌸
+                </h2>
+
+            </div>
+
+            <div class="scrapbook">
+
+                <!-- PHOTO 6 -->
+
+                <div class="scrap-photo scrap-one">
+
+                    <div class="pin">
+                        ✦
+                    </div>
+
+                    <img
+                        src="photo6.jpg.jpeg"
+                        alt="Mahima"
+                    >
+
+                    <span>
+                        memory
+                    </span>
+
+                </div>
+
+
+                <!-- PHOTO 7 -->
+
+                <div class="scrap-photo scrap-two">
+
+                    <div class="pin">
+                        ✦
+                    </div>
+
+                    <img
+                        src="photo7.jpg.jpeg"
+                        alt="Mahima"
+                    >
+
+                    <span>
+                        another one
+                    </span>
+
+                </div>
+
+
+                <!-- PHOTO 8 -->
+
+                <div class="scrap-photo scrap-three">
+
+                    <div class="pin">
+                        ✦
+                    </div>
+
+                    <img
+                        src="photo8.jpg.jpeg"
+                        alt="Mahima"
+                    >
+
+                    <span>
+                        saved here
+                    </span>
+
+                </div>
+
+                <div class="scrap-doodle doodle-one">
+                    ♡
+                </div>
+
+                <div class="scrap-doodle doodle-two">
+                    ✧
+                </div>
+
+                <div class="scrap-doodle doodle-three">
+                    🌷
+                </div>
+
+            </div>
+
+            <p class="scrap-message">
+                Eight photos, a few animations,
+                and quite a bit of time went into this.
+            </p>
+
+            <button
+                class="next-btn"
+                onclick="nextSlide()"
+            >
+                The real message →
+            </button>
+
+        </section>
+
+
+        <!-- ======================================
+             SLIDE 6 — FINAL BIRTHDAY MESSAGE
+        ======================================= -->
+
+        <section class="slide slide-6">
+
+            <div class="final-glow"></div>
+
+            <div class="slide-number">
+                05 / 06
+            </div>
+
+            <div class="final-content">
+
+                <div class="final-flower">
+                    🌷
+                </div>
+
+                <p class="final-eyebrow">
+                    For the first time...
+                </p>
+
+                <h1>
+                    Happy Birthday,
+                    <span>Mahima</span> ❤️
+                </h1>
+
+                <div class="message-card">
+
+                    <p>
+                        This is actually my first time
+                        wishing you a birthday,
+                        so I didn't want my wish to be
+                        just another simple
+                        <b>"Happy Birthday."</b>
+                    </p>
+
+                    <p>
+                        I wanted to make you a small
+                        memory instead — something you
+                        could open, smile at, and maybe
+                        remember later.
+                    </p>
+
+                    <p>
+                        I hope this new year of your life
+                        brings you lots of happiness,
+                        peaceful moments, good people,
+                        beautiful memories,
+                        and plenty of reasons to smile.
+                    </p>
+
+                    <p>
+                        And whenever you look back at
+                        this birthday, I hope you remember
+                        that someone took a little time
+                        to create something just to make
+                        your day a little more special. 🌸
+                    </p>
+
+                    <div class="final-wish">
+                        Once again, Happy Birthday, Mahima ✨
+                    </div>
+
+                    <div class="signature">
+                        — nitin
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button
+                class="next-btn final-next"
+                onclick="nextSlide()"
+            >
+                There's one last thing →
+            </button>
+
+        </section>
+
+
+        <!-- ======================================
+             SLIDE 7 — FINAL MEMORY
+        ======================================= -->
+
+        <section class="slide final-photo-slide">
+
+            <div class="last-particles"></div>
+
+            <div class="last-content">
+
+                <span class="last-small">
+                    before you leave...
+                </span>
+
+                <div class="last-photo">
+
+                    <div class="last-photo-glow"></div>
+
+                    <img
+                        src="photo8.jpg.jpeg"
+                        alt="Mahima"
+                    >
+
+                </div>
+
+                <h2>
+                    Keep this little
+                    memory with you. 🌷
+                </h2>
+
+                <p>
+                    Happy Birthday once again.
+                    <br>
+                    I hope you had a beautiful day.
+                </p>
+
+                <div class="last-signature">
+                    — nitin
+                </div>
+
+                <button
+                    class="replay-btn"
+                    onclick="restartPage()"
+                >
+                    ↻ Replay the surprise
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ======================================
+         PROGRESS DOTS
+    ======================================= -->
+
+    <div class="progress-dots" id="progressDots">
+
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

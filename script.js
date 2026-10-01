@@ -1,101 +1,297 @@
-// ======================================================
-// SUPABASE CONNECTION
-// ======================================================
+/* =====================================================
+   MAHIMA BIRTHDAY SURPRISE
+   JAVASCRIPT
+===================================================== */
 
-const SUPABASE_URL =
-    "https://hrjvgivrflycrzbwizcd.supabase.co";
+const slides =
+    document.querySelectorAll(".slide");
 
-const SUPABASE_KEY =
-    "sb_publishable_8BRrNMnMTAeAYZbNhuak9w_VkTgOYD3";
+const dots =
+    document.querySelectorAll(".dot");
+
+const app =
+    document.getElementById("birthdayApp");
+
+const petals =
+    document.getElementById("petals");
+
+let currentSlide = 0;
+
+let isAnimating = false;
 
 
-const supabaseClient =
-    supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_KEY
+/* =====================================================
+   INITIAL SETUP
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        showSlide(0);
+
+        createPetals();
+
+    }
+);
+
+
+/* =====================================================
+   SHOW SLIDE
+===================================================== */
+
+function showSlide(index) {
+
+    if (index < 0) {
+        index = 0;
+    }
+
+    if (index >= slides.length) {
+        index = slides.length - 1;
+    }
+
+    slides.forEach(
+        function (slide, i) {
+
+            slide.classList.toggle(
+                "active",
+                i === index
+            );
+
+        }
     );
 
 
-// ======================================================
-// SETTINGS
-// ======================================================
+    dots.forEach(
+        function (dot, i) {
 
-const CHAT_PASSWORD = "0209";
+            dot.classList.toggle(
+                "active",
+                i === index
+            );
 
-const ROOM_ID = "private-room-1";
-
-let currentSender = "Nitin";
-
-
-// ======================================================
-// PAGE ELEMENTS
-// ======================================================
-
-const passwordPage =
-    document.getElementById("passwordPage");
-
-const chatPage =
-    document.getElementById("chatPage");
-
-const passwordInput =
-    document.getElementById("passwordInput");
-
-const passwordError =
-    document.getElementById("passwordError");
-
-const messagesBox =
-    document.getElementById("messages");
-
-const messageInput =
-    document.getElementById("messageInput");
-
-const chatStatus =
-    document.getElementById("chatStatus");
-
-const emptyChat =
-    document.getElementById("emptyChat");
+        }
+    );
 
 
-// ======================================================
-// PASSWORD
-// ======================================================
+    currentSlide = index;
 
-function unlockChat() {
-
-    const password =
-        passwordInput.value.trim();
-
-    if (password === CHAT_PASSWORD) {
-
-        passwordPage.classList.add("hidden");
-
-        chatPage.classList.remove("hidden");
-
-        passwordError.textContent = "";
-
-        startChat();
-
-    } else {
-
-        passwordError.textContent =
-            "Wrong password. Try again.";
-
-        passwordInput.value = "";
-
-        passwordInput.focus();
-    }
 }
 
 
-// Enter key on password
+/* =====================================================
+   NEXT SLIDE
+===================================================== */
 
-passwordInput.addEventListener(
+function nextSlide() {
+
+    if (isAnimating) {
+        return;
+    }
+
+    isAnimating = true;
+
+
+    if (currentSlide < slides.length - 1) {
+
+        currentSlide++;
+
+        showSlide(currentSlide);
+
+        createPetals();
+
+    }
+
+
+    setTimeout(
+        function () {
+
+            isAnimating = false;
+
+        },
+        700
+    );
+
+}
+
+
+/* =====================================================
+   PREVIOUS SLIDE
+===================================================== */
+
+function previousSlide() {
+
+    if (isAnimating) {
+        return;
+    }
+
+    if (currentSlide > 0) {
+
+        currentSlide--;
+
+        showSlide(currentSlide);
+
+    }
+
+}
+
+
+/* =====================================================
+   OPEN SURPRISE
+===================================================== */
+
+function openSurprise() {
+
+    const openingCard =
+        document.querySelector(
+            ".opening-card"
+        );
+
+
+    if (openingCard) {
+
+        openingCard.classList.add(
+            "opened"
+        );
+
+    }
+
+
+    createPetals();
+
+
+    setTimeout(
+        function () {
+
+            nextSlide();
+
+        },
+        1000
+    );
+
+}
+
+
+/* =====================================================
+   RESTART
+===================================================== */
+
+function restartPage() {
+
+    currentSlide = 0;
+
+    showSlide(0);
+
+    createPetals();
+
+}
+
+
+/* =====================================================
+   PETALS
+===================================================== */
+
+function createPetals() {
+
+    if (!petals) {
+        return;
+    }
+
+
+    const symbols = [
+        "🌸",
+        "🌷",
+        "✿",
+        "·",
+        "✦"
+    ];
+
+
+    for (
+        let i = 0;
+        i < 8;
+        i++
+    ) {
+
+        const petal =
+            document.createElement(
+                "span"
+            );
+
+
+        petal.className =
+            "petal";
+
+
+        petal.textContent =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+
+        petal.style.left =
+            Math.random() * 100 + "%";
+
+
+        petal.style.animationDuration =
+            (5 + Math.random() * 5) + "s";
+
+
+        petal.style.animationDelay =
+            Math.random() * 2 + "s";
+
+
+        petal.style.fontSize =
+            (8 + Math.random() * 9) + "px";
+
+
+        petals.appendChild(
+            petal
+        );
+
+
+        setTimeout(
+            function () {
+
+                petal.remove();
+
+            },
+            12000
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   KEYBOARD NAVIGATION
+===================================================== */
+
+document.addEventListener(
     "keydown",
-    function(event) {
+    function (event) {
 
-        if (event.key === "Enter") {
+        if (
+            event.key === "ArrowRight" ||
+            event.key === " "
+        ) {
 
-            unlockChat();
+            event.preventDefault();
+
+            nextSlide();
+
+        }
+
+
+        if (
+            event.key === "ArrowLeft"
+        ) {
+
+            previousSlide();
 
         }
 
@@ -103,418 +299,120 @@ passwordInput.addEventListener(
 );
 
 
-// ======================================================
-// BACK
-// ======================================================
+/* =====================================================
+   TOUCH SWIPE
+===================================================== */
 
-function backToPassword() {
+let touchStartX = 0;
 
-    chatPage.classList.add("hidden");
-
-    passwordPage.classList.remove("hidden");
-
-    passwordInput.value = "";
-
-}
+let touchEndX = 0;
 
 
-// ======================================================
-// ANONYMOUS LOGIN
-// ======================================================
+document.addEventListener(
+    "touchstart",
+    function (event) {
 
-async function startChat() {
+        touchStartX =
+            event.changedTouches[0].screenX;
 
-    chatStatus.textContent =
-        "Connecting...";
-
-    try {
-
-        const {
-            data: sessionData,
-            error: sessionError
-        } =
-            await supabaseClient.auth.getSession();
-
-
-        if (sessionError) {
-
-            throw sessionError;
-
-        }
-
-
-        // Already logged in anonymously
-
-        if (sessionData.session) {
-
-            chatStatus.textContent = "";
-
-            await loadMessages();
-
-            return;
-        }
-
-
-        // Create anonymous user
-
-        const {
-            data,
-            error
-        } =
-            await supabaseClient.auth.signInAnonymously();
-
-
-        if (error) {
-
-            throw error;
-
-        }
-
-
-        console.log(
-            "Anonymous user connected:",
-            data.user.id
-        );
-
-
-        chatStatus.textContent = "";
-
-        await loadMessages();
-
-    } catch (error) {
-
-        console.error(error);
-
-        chatStatus.textContent =
-            "Connection error: " + error.message;
+    },
+    {
+        passive: true
     }
-}
+);
 
 
-// ======================================================
-// SENDER SELECTOR
-// ======================================================
+document.addEventListener(
+    "touchend",
+    function (event) {
 
-function setSender(name) {
-
-    currentSender = name;
-
-
-    const nitinButton =
-        document.getElementById("nitinButton");
-
-    const beautifulButton =
-        document.getElementById("beautifulButton");
+        touchEndX =
+            event.changedTouches[0].screenX;
 
 
-    nitinButton.classList.remove(
-        "name-active"
-    );
+        handleSwipe();
 
-    beautifulButton.classList.remove(
-        "name-active"
-    );
+    },
+    {
+        passive: true
+    }
+);
 
 
-    if (name === "Nitin") {
+function handleSwipe() {
 
-        nitinButton.classList.add(
-            "name-active"
-        );
+    const distance =
+        touchEndX - touchStartX;
+
+
+    if (Math.abs(distance) < 50) {
+        return;
+    }
+
+
+    if (distance < 0) {
+
+        nextSlide();
 
     } else {
 
-        beautifulButton.classList.add(
-            "name-active"
-        );
+        previousSlide();
+
     }
+
 }
 
 
-// ======================================================
-// LOAD MESSAGES
-// ======================================================
+/* =====================================================
+   PREVENT DOUBLE TAP ZOOM
+===================================================== */
 
-async function loadMessages() {
+let lastTap = 0;
 
-    const {
-        data,
-        error
-    } =
-        await supabaseClient
-            .from("messages")
-            .select("*")
-            .eq("room_id", ROOM_ID)
-            .order(
-                "created_at",
-                {
-                    ascending: true
-                }
-            );
 
+document.addEventListener(
+    "touchend",
+    function (event) {
 
-    if (error) {
+        const now =
+            Date.now();
 
-        console.error(error);
-
-        chatStatus.textContent =
-            error.message;
-
-        return;
-    }
-
-
-    messagesBox.innerHTML = "";
-
-
-    if (!data || data.length === 0) {
-
-        showEmptyMessage();
-
-        return;
-    }
-
-
-    data.forEach(
-        message => {
-
-            displayMessage(message);
-
-        }
-    );
-
-
-    scrollToBottom();
-}
-
-
-// ======================================================
-// EMPTY CHAT
-// ======================================================
-
-function showEmptyMessage() {
-
-    messagesBox.innerHTML = `
-
-        <div class="empty-chat">
-
-            <div>♡</div>
-
-            <p>
-                No messages yet.
-            </p>
-
-            <small>
-                Start the conversation...
-            </small>
-
-        </div>
-
-    `;
-}
-
-
-// ======================================================
-// DISPLAY MESSAGE
-// ======================================================
-
-function displayMessage(message) {
-
-    const div =
-        document.createElement("div");
-
-
-    const isNitin =
-        message.sender_name === "Nitin";
-
-
-    div.className =
-        "message " +
-        (
-            isNitin
-                ? "nitin"
-                : "beautiful"
-        );
-
-
-    const time =
-        new Date(
-            message.created_at
-        ).toLocaleTimeString(
-            [],
-            {
-                hour: "2-digit",
-                minute: "2-digit"
-            }
-        );
-
-
-    div.innerHTML = `
-
-        <div class="message-name">
-            ${escapeHTML(
-                message.sender_name
-            )}
-        </div>
-
-        <div class="message-text">
-            ${escapeHTML(
-                message.message
-            )}
-        </div>
-
-        <div class="message-time">
-            ${time}
-        </div>
-
-    `;
-
-
-    messagesBox.appendChild(div);
-}
-
-
-// ======================================================
-// SEND MESSAGE
-// ======================================================
-
-async function sendMessage() {
-
-    const text =
-        messageInput.value.trim();
-
-
-    if (!text) {
-
-        return;
-    }
-
-
-    chatStatus.textContent =
-        "Sending...";
-
-
-    try {
-
-        const {
-            data,
-            error
-        } =
-            await supabaseClient.auth.getUser();
-
-
-        if (error || !data.user) {
-
-            throw new Error(
-                "Chat connection lost. Refresh the page."
-            );
-        }
-
-
-        const {
-            error: insertError
-        } =
-            await supabaseClient
-                .from("messages")
-                .insert({
-
-                    user_id:
-                        data.user.id,
-
-                    sender_name:
-                        currentSender,
-
-                    message:
-                        text,
-
-                    room_id:
-                        ROOM_ID
-                });
-
-
-        if (insertError) {
-
-            throw insertError;
-        }
-
-
-        messageInput.value = "";
-
-        chatStatus.textContent = "";
-
-        await loadMessages();
-
-
-    } catch (error) {
-
-        console.error(error);
-
-        chatStatus.textContent =
-            error.message;
-    }
-}
-
-
-// ======================================================
-// ENTER TO SEND
-// ======================================================
-
-function handleEnter(event) {
-
-    if (event.key === "Enter") {
-
-        event.preventDefault();
-
-        sendMessage();
-    }
-}
-
-
-// ======================================================
-// AUTO REFRESH
-// ======================================================
-
-// Every 2 seconds check for new messages.
-
-setInterval(
-    async function() {
 
         if (
-            !chatPage.classList.contains(
-                "hidden"
-            )
+            now - lastTap < 300
         ) {
 
-            await loadMessages();
+            event.preventDefault();
+
+        }
+
+
+        lastTap = now;
+
+    },
+    {
+        passive: false
+    }
+);
+
+
+/* =====================================================
+   OPTIONAL AUTO PETALS
+===================================================== */
+
+setInterval(
+    function () {
+
+        if (
+            currentSlide === 0 ||
+            currentSlide === 5 ||
+            currentSlide === 6
+        ) {
+
+            createPetals();
 
         }
 
     },
-    2000
+    7000
 );
-
-
-// ======================================================
-// SCROLL
-// ======================================================
-
-function scrollToBottom() {
-
-    messagesBox.scrollTop =
-        messagesBox.scrollHeight;
-}
-
-
-// ======================================================
-// BASIC HTML ESCAPE
-// ======================================================
-
-function escapeHTML(text) {
-
-    const div =
-        document.createElement("div");
-
-    div.textContent = text;
-
-    return div.innerHTML;
-}
