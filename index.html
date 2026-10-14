@@ -1,155 +1,176 @@
+
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="FormSathi par job forms, scholarship, admission aur exam applications ke liye online form-filling assistance paayein.">
-  <meta name="theme-color" content="#126b4b">
+  <meta name="description" content="FormSathi helps you with online form filling, scholarship forms, exam applications and job forms.">
   <title>FormSathi | Online Form Assistance</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#home" aria-label="FormSathi home">
-        <span class="brand-mark">✓</span>
-        <span>FormSathi</span>
-      </a>
-      <a class="nav-link" href="#contact">Contact karein <span aria-hidden="true">↗</span></a>
+  <header class="header">
+    <a href="#" class="logo">Form<span>Sathi</span></a>
+
+    <div class="header-actions">
+      <button id="languageBtn" class="lang-btn" type="button">हिंदी</button>
+      <a href="#contact" class="header-link" data-en="Contact Us" data-hi="संपर्क करें">Contact Us</a>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow"><span class="dot"></span> Online Form Assistance</span>
-          <h1>Aapka form,<br><span>hamari assistance.</span></h1>
-          <p class="hero-text">Job forms, scholarship, admission, exam registration aur anya online applications ke liye WhatsApp par sampark karein.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#contact">WhatsApp se contact karein <span aria-hidden="true">→</span></a>
-            <a class="button button-light" href="#services">Services dekhein</a>
-          </div>
-          <div class="trust-note"><span aria-hidden="true">✓</span> Pehle details aur charges confirm, phir kaam shuru.</div>
-        </div>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow" data-en="YOUR ONLINE FORM PARTNER" data-hi="आपका ऑनलाइन फॉर्म साथी">
+          YOUR ONLINE FORM PARTNER
+        </span>
 
-        <aside class="price-card" aria-label="Service fee information">
-          <div class="price-icon" aria-hidden="true">₹</div>
-          <p class="card-kicker">BASIC SERVICE FEE</p>
-          <div class="price">₹50<span>*</span></div>
-          <p class="price-caption">Eligible basic form-filling assistance</p>
-          <div class="price-divider"></div>
-          <ul class="benefits">
-            <li><span>✓</span> Form details bharne mein madad</li>
-            <li><span>✓</span> Submission se pehle details verify</li>
-            <li><span>✓</span> Available PDF/receipt WhatsApp par</li>
-          </ul>
-          <p class="fine-print">*Official application fees aur extra services alag ho sakti hain.</p>
-        </aside>
+        <h1 data-en="Online Forms Made <span>Simple.</span>"
+            data-hi="ऑनलाइन फॉर्म भरना अब <span>आसान।</span>">
+          Online Forms Made <span>Simple.</span>
+        </h1>
+
+        <p data-en="Need help with an online application? FormSathi makes the process easier with friendly form-filling assistance."
+           data-hi="ऑनलाइन आवेदन भरने में मदद चाहिए? FormSathi आपके फॉर्म भरने की प्रक्रिया को आसान बनाने में मदद करता है।">
+          Need help with an online application? FormSathi makes the process easier with friendly form-filling assistance.
+        </p>
+
+        <a href="#services" class="primary-btn" data-en="Explore Services →" data-hi="हमारी सेवाएँ देखें →">
+          Explore Services →
+        </a>
+
+        <div class="trust-note">
+          <span>✓</span>
+          <span data-en="Clear pricing · Friendly support" data-hi="स्पष्ट शुल्क · सहयोगपूर्ण सेवा">
+            Clear pricing · Friendly support
+          </span>
+        </div>
       </div>
-      <div class="hero-decoration decoration-one"></div>
-      <div class="hero-decoration decoration-two"></div>
-    </section>
 
-    <section class="services section" id="services">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-label">WHAT WE HELP WITH</span>
-          <h2>Ek jagah, kai tarah ke forms.</h2>
-          <p>Apna form batayein; hum process aur availability check karne mein madad karenge.</p>
-        </div>
-        <div class="service-grid">
-          <article class="service-card">
-            <div class="service-icon icon-green" aria-hidden="true">💼</div>
-            <h3>Job Forms</h3>
-            <p>Government aur private recruitment applications mein assistance.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon icon-blue" aria-hidden="true">🎓</div>
-            <h3>Scholarship</h3>
-            <p>Scholarship aur college admission applications mein madad.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon icon-yellow" aria-hidden="true">📝</div>
-            <h3>Exam Forms</h3>
-            <p>Exam registration aur correction process ke liye assistance.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon icon-purple" aria-hidden="true">📄</div>
-            <h3>Other Forms</h3>
-            <p>Doosre online forms ke liye WhatsApp par availability poochhein.</p>
-          </article>
-        </div>
-        <div class="pricing-note">
-          <span class="note-icon" aria-hidden="true">i</span>
-          <p><strong>Pricing note:</strong> ₹50 basic service fee hai, har form ke liye guaranteed rate nahi. Official exam/application fee, printing, correction ya complex work ke charges alag ho sakte hain. Kaam shuru hone se pehle total cost confirm karein.</p>
-        </div>
+      <div class="hero-card">
+        <div class="document-icon">📄</div>
+        <span class="card-label" data-en="YOUR APPLICATION" data-hi="आपका आवेदन">YOUR APPLICATION</span>
+        <h2 data-en="One step at a time." data-hi="एक-एक कदम आसान।">One step at a time.</h2>
+        <div class="progress-item"><span>01</span><p data-en="Share your requirements" data-hi="अपनी जरूरत बताएँ">Share your requirements</p></div>
+        <div class="progress-item"><span>02</span><p data-en="Complete the form together" data-hi="मिलकर फॉर्म पूरा करें">Complete the form together</p></div>
+        <div class="progress-item"><span>03</span><p data-en="Check your application" data-hi="अपने आवेदन की जाँच करें">Check your application</p></div>
       </div>
     </section>
 
-    <section class="how section" id="how-it-works">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-label">SIMPLE PROCESS</span>
-          <h2>Kaam kaise hoga?</h2>
-          <p>Request bhejne se PDF milne tak ke simple steps.</p>
-        </div>
-        <div class="steps-grid">
-          <article class="step-card">
-            <div class="step-number">01</div>
-            <h3>WhatsApp par message</h3>
-            <p>Form ka naam aur deadline batayein. Hum required details aur availability confirm karenge.</p>
-          </article>
-          <article class="step-card">
-            <div class="step-number">02</div>
-            <h3>Details check</h3>
-            <p>Charges aur details aapke saath verify karke hi application process shuru hoga.</p>
-          </article>
-          <article class="step-card">
-            <div class="step-number">03</div>
-            <h3>PDF / receipt paayein</h3>
-            <p>Submission ke baad official portal jo PDF ya receipt provide karega, woh WhatsApp par bheji jayegi.</p>
-          </article>
-        </div>
+    <section class="section" id="services">
+      <div class="section-heading">
+        <span class="eyebrow" data-en="WHAT WE HELP WITH" data-hi="हम किन कामों में मदद करते हैं">WHAT WE HELP WITH</span>
+        <h2 data-en="Support for your <span>applications.</span>" data-hi="आपके आवेदनों के लिए <span>सहायता।</span>">
+          Support for your <span>applications.</span>
+        </h2>
+        <p data-en="Choose the kind of form you need help with." data-hi="जिस फॉर्म में मदद चाहिए, उसे चुनें।">
+          Choose the kind of form you need help with.
+        </p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="service-icon">💼</div>
+          <h3 data-en="Job Applications" data-hi="नौकरी के आवेदन">Job Applications</h3>
+          <p data-en="Assistance with online job and recruitment forms." data-hi="नौकरी और भर्ती के ऑनलाइन फॉर्म भरने में सहायता।">
+            Assistance with online job and recruitment forms.
+          </p>
+          <button class="text-btn choose-service" data-service="Job Application" data-en="Get Help →" data-hi="मदद लें →">Get Help →</button>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">🎓</div>
+          <h3 data-en="Scholarship Forms" data-hi="छात्रवृत्ति फॉर्म">Scholarship Forms</h3>
+          <p data-en="Help with scholarship applications and form details." data-hi="छात्रवृत्ति आवेदन और फॉर्म की जानकारी भरने में सहायता।">
+            Help with scholarship applications and form details.
+          </p>
+          <button class="text-btn choose-service" data-service="Scholarship Form" data-en="Get Help →" data-hi="मदद लें →">Get Help →</button>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">📝</div>
+          <h3 data-en="Exam Forms" data-hi="परीक्षा के फॉर्म">Exam Forms</h3>
+          <p data-en="Assistance with exam registrations and applications." data-hi="परीक्षा पंजीकरण और आवेदन भरने में सहायता।">
+            Assistance with exam registrations and applications.
+          </p>
+          <button class="text-btn choose-service" data-service="Exam Form" data-en="Get Help →" data-hi="मदद लें →">Get Help →</button>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">📑</div>
+          <h3 data-en="Other Online Forms" data-hi="अन्य ऑनलाइन फॉर्म">Other Online Forms</h3>
+          <p data-en="Ask us about other online application assistance." data-hi="अन्य ऑनलाइन आवेदनों में सहायता के लिए संपर्क करें।">
+            Ask us about other online application assistance.
+          </p>
+          <button class="text-btn choose-service" data-service="Other Online Form" data-en="Get Help →" data-hi="मदद लें →">Get Help →</button>
+        </article>
       </div>
     </section>
 
-    <section class="contact-section section" id="contact">
-      <div class="container">
-        <div class="contact-panel">
-          <div class="contact-copy">
-            <span class="section-label section-label-light">WHATSAPP SUPPORT</span>
-            <h2>Apna form bharwana hai?</h2>
-            <p>Neeche kisi ek contact ko choose karein. WhatsApp chat mein message pehle se likha hoga; bhejne se pehle aap use edit kar sakte hain.</p>
-            <div class="privacy-line"><span aria-hidden="true">🔒</span> Number website par normal text ki tarah show nahi hoga.</div>
-          </div>
-          <div class="contact-actions">
-            <a class="whatsapp-button" id="whatsapp1" href="#contact" target="_blank" rel="noopener noreferrer">
-              <span class="whatsapp-symbol" aria-hidden="true">☏</span>
-              <span class="whatsapp-text"><strong>WhatsApp – Contact 1</strong><small>Apne form ke liye message karein</small></span>
-              <span class="button-arrow" aria-hidden="true">↗</span>
-            </a>
-            <a class="whatsapp-button" id="whatsapp2" href="#contact" target="_blank" rel="noopener noreferrer">
-              <span class="whatsapp-symbol" aria-hidden="true">☏</span>
-              <span class="whatsapp-text"><strong>WhatsApp – Contact 2</strong><small>Alternative contact</small></span>
-              <span class="button-arrow" aria-hidden="true">↗</span>
-            </a>
-            <p class="contact-hint">Aapki chat aapke WhatsApp app ya WhatsApp Web mein khulegi.</p>
-          </div>
-        </div>
-        <div class="safety-note">
-          <strong>Privacy aur safety:</strong> OTP, password, bank PIN ya card details website/WhatsApp par store ya share na karein. Zaroori OTP ya sensitive steps customer ki presence mein karein. Final submission se pehle customer se details confirm karwayein. FormSathi ek independent assistance service hai, government website nahi.
-        </div>
+    <section class="price-section">
+      <div>
+        <span class="eyebrow" data-en="SIMPLE PRICING" data-hi="आसान शुल्क">SIMPLE PRICING</span>
+        <h2 data-en="Know the cost <span>before you start.</span>" data-hi="शुरू करने से पहले <span>शुल्क जानें।</span>">
+          Know the cost <span>before you start.</span>
+        </h2>
+        <p data-en="Our basic form-filling assistance service fee starts at ₹50. We will explain any extra charges before proceeding."
+           data-hi="हमारी बुनियादी फॉर्म भरने की सहायता सेवा का शुल्क ₹50 से शुरू होता है। आगे बढ़ने से पहले अतिरिक्त शुल्क बताया जाएगा।">
+          Our basic form-filling assistance service fee starts at ₹50. We will explain any extra charges before proceeding.
+        </p>
+        <small data-en="Official application fees, printing, and other additional services may cost extra."
+               data-hi="सरकारी आवेदन शुल्क, प्रिंटिंग और अन्य अतिरिक्त सेवाओं का शुल्क अलग हो सकता है।">
+          Official application fees, printing, and other additional services may cost extra.
+        </small>
       </div>
+      <div class="price-card">
+        <span data-en="BASIC SERVICE FEE" data-hi="बुनियादी सेवा शुल्क">BASIC SERVICE FEE</span>
+        <strong>₹50<small>+</small></strong>
+        <p data-en="Final cost depends on the service required." data-hi="अंतिम शुल्क आपकी जरूरत के अनुसार होगा।">
+          Final cost depends on the service required.
+        </p>
+        <a href="#contact" class="primary-btn" data-en="Contact Us" data-hi="संपर्क करें">Contact Us</a>
+      </div>
+    </section>
+
+    <section class="section steps-section">
+      <div class="section-heading">
+        <span class="eyebrow" data-en="HOW IT WORKS" data-hi="यह कैसे काम करता है">HOW IT WORKS</span>
+        <h2 data-en="Three simple <span>steps.</span>" data-hi="तीन आसान <span>कदम।</span>">Three simple <span>steps.</span></h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step"><span>01</span><h3 data-en="Contact us" data-hi="संपर्क करें">Contact us</h3><p data-en="Tell us which form you need help with." data-hi="बताएँ कि किस फॉर्म में मदद चाहिए।">Tell us which form you need help with.</p></div>
+        <div class="step"><span>02</span><h3 data-en="Review the details" data-hi="जानकारी जाँचें">Review the details</h3><p data-en="We explain the process and charges before starting." data-hi="शुरू करने से पहले प्रक्रिया और शुल्क समझाया जाएगा।">We explain the process and charges before starting.</p></div>
+        <div class="step"><span>03</span><h3 data-en="Complete together" data-hi="मिलकर पूरा करें">Complete together</h3><p data-en="Review the information and available confirmation documents." data-hi="जानकारी और उपलब्ध पुष्टि दस्तावेजों की जाँच करें।">Review the information and available confirmation documents.</p></div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div>
+        <span class="eyebrow" data-en="LET'S GET STARTED" data-hi="चलिए शुरू करते हैं">LET'S GET STARTED</span>
+        <h2 data-en="Need a hand with a form?" data-hi="फॉर्म भरने में मदद चाहिए?">Need a hand with a form?</h2>
+        <p data-en="Message us on WhatsApp. Tell us what you need and we’ll guide you through the next steps."
+           data-hi="WhatsApp पर मैसेज करें। अपनी जरूरत बताएँ, हम आगे की प्रक्रिया समझाएँगे।">
+          Message us on WhatsApp. Tell us what you need and we’ll guide you through the next steps.
+        </p>
+      </div>
+      <div class="contact-buttons">
+        <a class="whatsapp-btn" id="whatsapp1" href="#" target="_blank" rel="noopener noreferrer">💬 <span data-en="WhatsApp Support 1" data-hi="WhatsApp सहायता 1">WhatsApp Support 1</span></a>
+        <a class="whatsapp-btn secondary" id="whatsapp2" href="#" target="_blank" rel="noopener noreferrer">💬 <span data-en="WhatsApp Support 2" data-hi="WhatsApp सहायता 2">WhatsApp Support 2</span></a>
+      </div>
+    </section>
+
+    <section class="notice">
+      <strong data-en="Please note" data-hi="कृपया ध्यान दें">Please note</strong>
+      <p data-en="FormSathi is an independent form-filling assistance service and is not affiliated with any government department. We never ask for your password, OTP, bank PIN, or payment PIN. Check all details carefully before submission. Keep sensitive steps under your own control."
+         data-hi="FormSathi एक स्वतंत्र फॉर्म भरने की सहायता सेवा है और किसी सरकारी विभाग से जुड़ी नहीं है। हम आपका पासवर्ड, OTP, बैंक PIN या पेमेंट PIN नहीं माँगते। सबमिट करने से पहले सभी जानकारी जाँचें और संवेदनशील चरण अपने नियंत्रण में रखें।">
+        FormSathi is an independent form-filling assistance service and is not affiliated with any government department. We never ask for your password, OTP, bank PIN, or payment PIN. Check all details carefully before submission. Keep sensitive steps under your own control.
+      </p>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <a class="brand footer-brand" href="#home"><span class="brand-mark">✓</span><span>FormSathi</span></a>
-      <p>Independent online form assistance · Not a government website</p>
-      <p>© <span id="year"></span> FormSathi</p>
-    </div>
+  <footer class="footer">
+    <a href="#" class="logo">Form<span>Sathi</span></a>
+    <p>© <span id="year"></span> FormSathi. <span data-en="Made to make forms easier." data-hi="फॉर्म भरना आसान बनाने के लिए।">Made to make forms easier.</span></p>
   </footer>
 
   <script src="script.js"></script>
