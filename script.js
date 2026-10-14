@@ -1,96 +1,93 @@
 
-/*
-  Replace these two placeholders with your real WhatsApp numbers.
-  Format: country code + 10-digit mobile number.
-  Example format: 919876543210
-  Do not include +, spaces, or hyphens.
+/* Apne WhatsApp numbers yahan daalo.
+   Format: 91 ke baad 10 digit mobile number.
+   Example: 919876543210
+   +, spaces ya hyphen mat lagana.
 */
 
 const WHATSAPP_NUMBER_1 = "916391220862";
 const WHATSAPP_NUMBER_2 = "917905573288";
 
-let currentLanguage = "en";
+let currentLanguage = "hi";
 
 const languageBtn = document.getElementById("languageBtn");
 
-function setLanguage(language) {
+function changeLanguage(language) {
   currentLanguage = language;
-
   document.documentElement.lang = language;
 
   document.querySelectorAll("[data-en][data-hi]").forEach((element) => {
-    const content = element.dataset[language];
-
-    // Allow intentional span markup in the two styled headings.
-    if (content.includes("<span>")) {
-      element.innerHTML = content;
-    } else {
-      element.textContent = content;
-    }
+    element.textContent = element.getAttribute(`data-${language}`);
   });
 
-  languageBtn.textContent = language === "en" ? "हिंदी" : "English";
-  languageBtn.setAttribute(
-    "aria-label",
-    language === "en" ? "Switch to Hindi" : "Switch to English"
-  );
+  languageBtn.textContent = language === "hi" ? "English" : "हिंदी";
 }
 
 languageBtn.addEventListener("click", () => {
-  setLanguage(currentLanguage === "en" ? "hi" : "en");
+  changeLanguage(currentLanguage === "hi" ? "en" : "hi");
 });
 
-function createWhatsAppLink(number, service = "") {
+function isValidNumber(number) {
+  return /^91\d{10}$/.test(number);
+}
+
+function whatsappUrl(number, service = "") {
   const message = service
-    ? `Hello FormSathi, I need help with: ${service}. Please explain the process and total charges.`
-    : "Hello FormSathi, I need help with an online form. Please explain the process and charges.";
+    ? `Hello FormSathi, I need help with ${service}. Please tell me the process and total charges.`
+    : "Hello FormSathi, I need help with an online form. Please tell me the process and total charges.";
 
   return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 }
 
-function setupWhatsAppLinks() {
-  const link1 = document.getElementById("whatsapp1");
-  const link2 = document.getElementById("whatsapp2");
+function setupContactLink(id, number) {
+  const link = document.getElementById(id);
 
-  link1.href = createWhatsAppLink(WHATSAPP_NUMBER_1);
-  link2.href = createWhatsAppLink(WHATSAPP_NUMBER_2);
-
-  // Hide links until valid numbers are entered.
-  const validNumber = (number) => /^91\d{10}$/.test(number);
-
-  if (!validNumber(WHATSAPP_NUMBER_1)) {
-    link1.removeAttribute("href");
-    link1.classList.add("disabled-link");
-    link1.title = "Add the first WhatsApp number in script.js";
+  if (isValidNumber(number)) {
+    link.href = whatsappUrl(number);
+    link.classList.remove("disabled-link");
+    link.removeAttribute("aria-disabled");
+  } else {
+    link.removeAttribute("href");
+    link.classList.add("disabled-link");
+    link.setAttribute("aria-disabled", "true");
   }
 
-  if (!validNumber(WHATSAPP_NUMBER_2)) {
-    link2.removeAttribute("href");
-    link2.classList.add("disabled-link");
-    link2.title = "Add the second WhatsApp number in script.js";
-  }
+  link.addEventListener("click", (event) => {
+    if (!isValidNumber(number)) {
+      event.preventDefault();
+
+      alert(
+        currentLanguage === "hi"
+          ? "Pehle script.js mein sahi WhatsApp number daalo."
+          : "Please add a valid WhatsApp number in script.js first."
+      );
+    }
+  });
 }
 
-document.querySelectorAll(".choose-service").forEach((button) => {
-  button.addEventListener("click", () => {
-    const service = button.dataset.service;
-    const message = createWhatsAppLink(WHATSAPP_NUMBER_1, service);
-    const validNumber = /^91\d{10}$/.test(WHATSAPP_NUMBER_1);
+setupContactLink("whatsapp1", WHATSAPP_NUMBER_1);
+setupContactLink("whatsapp2", WHATSAPP_NUMBER_2);
 
-    if (!validNumber) {
+document.querySelectorAll(".service-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    if (!isValidNumber(WHATSAPP_NUMBER_1)) {
       alert(
-        currentLanguage === "en"
-          ? "Please add your WhatsApp number in script.js first."
-          : "पहले script.js में अपना WhatsApp नंबर डालें।"
+        currentLanguage === "hi"
+          ? "Pehle script.js mein pehla WhatsApp number daalo."
+          : "Please add the first WhatsApp number in script.js first."
       );
       return;
     }
 
-    window.open(message, "_blank", "noopener,noreferrer");
+    const service = button.getAttribute("data-service");
+    window.open(
+      whatsappUrl(WHATSAPP_NUMBER_1, service),
+      "_blank",
+      "noopener,noreferrer"
+    );
   });
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
-setupWhatsAppLinks();
-setLanguage("en");
+changeLanguage("hi");
