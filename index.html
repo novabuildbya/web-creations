@@ -1,131 +1,204 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#176b50">
-  <meta name="description" content="FormSathi - Online form filling assistance in Hindi and English.">
-  <title>FormSathi | Online Form Assistance</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FormSathi – ऑनलाइन फॉर्म भरने में सहायता | विद्यार्थी और नौकरी चाहने वालों के लिए</title>
+<meta name="description" content="FormSathi एक स्वतंत्र सेवा है जो भारत में विद्यार्थियों और नौकरी चाहने वालों को ऑनलाइन फॉर्म, स्कॉलरशिप और परीक्षा रजिस्ट्रेशन में मदद करती है। सहायता ₹50 से शुरू। हिंदी और अंग्रेज़ी में सहायता।">
+<meta property="og:title" content="FormSathi – ऑनलाइन फॉर्म भरना, अब आसान">
+<meta property="og:description" content="नौकरी, स्कॉलरशिप और परीक्षा के फॉर्म में साफ़ मार्गदर्शन। सहायता ₹50 से शुरू। सरकारी वेबसाइट नहीं।">
+<meta property="og:locale" content="hi_IN">
+<meta property="og:type" content="website">
+<meta property="og:image" content="FormSathi%20Green%20Education%20Logo.png">
+<meta name="theme-color" content="#14532d">
+<link rel="icon" href="FormSathi%20Green%20Education%20Logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="topbar">
-  <a class="brand" href="#home">
-    <img src="FormSathi Green Education Logo.png" alt="FormSathi logo">
-    <span class="brand-name">Form<span>Sathi</span></span>
-  </a>
-  <button class="language" id="languageBtn" type="button">English</button>
+<!-- Icon sprite (used by service cards) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-job" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+  <symbol id="i-scholar" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></symbol>
+  <symbol id="i-exam" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></symbol>
+  <symbol id="i-college" viewBox="0 0 24 24"><path d="M3 21h18M5 21V10M19 21V10M9 21v-7M15 21v-7M3 10l9-6 9 6"/></symbol>
+  <symbol id="i-docs" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 14l2 2 4-4"/></symbol>
+  <symbol id="i-other" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+</svg>
+
+<a class="skip" href="#main" data-i18n="skip">मुख्य सामग्री पर जाएँ</a>
+
+<header class="site-header" id="header">
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="FormSathi होम">
+      <img src="FormSathi%20Green%20Education%20Logo.png" alt="FormSathi लोगो" width="36" height="36">
+      <span>FormSathi</span>
+    </a>
+    <nav id="menu" class="menu" aria-label="मुख्य मेन्यू">
+      <a href="#home" data-i18n="nav_home">होम</a>
+      <a href="#services" data-i18n="nav_services">सेवाएँ</a>
+      <a href="#jobs" data-i18n="nav_jobs">नई भर्तियाँ</a>
+      <a href="#how" data-i18n="nav_how">कैसे काम करता है</a>
+      <a href="#about" data-i18n="nav_about">परिचय</a>
+      <a href="#contact" data-i18n="nav_contact">संपर्क</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="languageBtn" class="lang" type="button" aria-label="भाषा बदलें">English</button>
+      <button id="menuBtn" class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="मेन्यू खोलें"><span></span><span></span><span></span></button>
+    </div>
+  </div>
 </header>
 
-<main>
-  <section class="hero" id="home">
-    <span class="eyebrow" data-en="YOUR ONLINE FORM PARTNER" data-hi="आपका ऑनलाइन फॉर्म साथी">आपका ऑनलाइन फॉर्म साथी</span>
-    <h1 data-en="Online forms, made easier." data-hi="ऑनलाइन फॉर्म भरना अब आसान।">ऑनलाइन फॉर्म भरना अब आसान।</h1>
-    <p data-en="Need help filling a form? We explain the process in simple language." data-hi="फॉर्म भरने में मदद चाहिए? हम आपको आसान भाषा में पूरी प्रक्रिया समझाने में मदद करेंगे।">फॉर्म भरने में मदद चाहिए? हम आपको आसान भाषा में पूरी प्रक्रिया समझाने में मदद करेंगे।</p>
-    <a class="main-button" href="#services" data-en="See our services ↓" data-hi="हमारी सेवाएँ देखें ↓">हमारी सेवाएँ देखें ↓</a>
-    <div class="hero-note">✓ <span data-en="Simple process · Clear charges" data-hi="आसान प्रक्रिया · शुल्क की साफ जानकारी">आसान प्रक्रिया · शुल्क की साफ जानकारी</span></div>
-  </section>
+<main id="main">
 
-  <section class="section" id="services">
-    <div class="section-title">
-      <span class="eyebrow" data-en="OUR SERVICES" data-hi="हमारी सेवाएँ">हमारी सेवाएँ</span>
-      <h2 data-en="What do you need help with?" data-hi="आपको किस काम में मदद चाहिए?">आपको किस काम में मदद चाहिए?</h2>
-      <p data-en="Choose the type of form below." data-hi="नीचे अपने काम का विकल्प चुनें।">नीचे अपने काम का विकल्प चुनें।</p>
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1 data-i18n="hero_h1">ऑनलाइन फॉर्म भरना, अब आसान।</h1>
+      <p class="lead" data-i18n="hero_p">FormSathi नौकरी, स्कॉलरशिप और परीक्षा के ऑनलाइन आवेदन समझने और भरने में साफ़ मार्गदर्शन और व्यक्तिगत सहायता के साथ आपकी मदद करता है।</p>
+      <div class="btn-row">
+        <a class="btn primary" href="#services" data-i18n="hero_cta1">सेवाएँ देखें</a>
+        <a class="btn ghost" href="#" data-wa="general" data-i18n="hero_cta2">WhatsApp पर संपर्क करें</a>
+      </div>
+      <p class="fine" data-i18n="hero_note">यह एक स्वतंत्र सहायता सेवा है। सरकारी वेबसाइट नहीं।</p>
     </div>
 
-    <div class="service-list">
-      <article class="service-card">
-        <div class="service-icon">💼</div>
-        <div class="service-info">
-          <h3 data-en="Job Forms" data-hi="नौकरी के फॉर्म">नौकरी के फॉर्म</h3>
-          <p data-en="Help with job and recruitment applications." data-hi="नौकरी और भर्ती के आवेदन भरने में सहायता।">नौकरी और भर्ती के आवेदन भरने में सहायता।</p>
-          <button class="service-button" data-service="Job Form" data-en="Get help →" data-hi="मदद लें →">मदद लें →</button>
-        </div>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">🎓</div>
-        <div class="service-info">
-          <h3 data-en="Scholarship Forms" data-hi="छात्रवृत्ति के फॉर्म">छात्रवृत्ति के फॉर्म</h3>
-          <p data-en="Help with scholarship forms and details." data-hi="छात्रवृत्ति के फॉर्म और जानकारी भरने में सहायता।">छात्रवृत्ति के फॉर्म और जानकारी भरने में सहायता।</p>
-          <button class="service-button" data-service="Scholarship Form" data-en="Get help →" data-hi="मदद लें →">मदद लें →</button>
-        </div>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">📝</div>
-        <div class="service-info">
-          <h3 data-en="Exam Forms" data-hi="परीक्षा के फॉर्म">परीक्षा के फॉर्म</h3>
-          <p data-en="Assistance with exam registration and applications." data-hi="परीक्षा रजिस्ट्रेशन और आवेदन भरने में सहायता।">परीक्षा रजिस्ट्रेशन और आवेदन भरने में सहायता।</p>
-          <button class="service-button" data-service="Exam Form" data-en="Get help →" data-hi="मदद लें →">मदद लें →</button>
-        </div>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">📄</div>
-        <div class="service-info">
-          <h3 data-en="Other Online Forms" data-hi="अन्य ऑनलाइन फॉर्म">अन्य ऑनलाइन फॉर्म</h3>
-          <p data-en="Ask us about other online forms." data-hi="अन्य ऑनलाइन फॉर्म के लिए हमसे पूछें।">अन्य ऑनलाइन फॉर्म के लिए हमसे पूछें।</p>
-          <button class="service-button" data-service="Other Online Form" data-en="Get help →" data-hi="मदद लें →">मदद लें →</button>
-        </div>
-      </article>
+    <div class="hero-visual" aria-label="आवेदन चेकलिस्ट का उदाहरण">
+      <div class="glass-card">
+        <p class="vt" data-i18n="v_title">आपका आवेदन, कदम दर कदम</p>
+        <ul class="steps">
+          <li class="done"><svg class="ic"><use href="#i-check"/></svg><span data-i18n="v1">फॉर्म चुनें</span></li>
+          <li class="done"><svg class="ic"><use href="#i-check"/></svg><span data-i18n="v2">दस्तावेज़ तैयार रखें</span></li>
+          <li><span class="dot"></span><span data-i18n="v3">हर जानकारी खुद जाँचें</span></li>
+          <li><span class="dot"></span><span data-i18n="v4">आधिकारिक वेबसाइट पर जमा करें</span></li>
+        </ul>
+      </div>
+      <div class="glass-card mini">
+        <span class="price">₹50</span>
+        <span data-i18n="v_price">से सहायता शुरू। आधिकारिक शुल्क अलग है।</span>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="fee-section" id="fees">
-    <span class="eyebrow" data-en="CLEAR PRICING" data-hi="स्पष्ट शुल्क">स्पष्ट शुल्क</span>
-    <h2 data-en="Basic service fee" data-hi="बुनियादी सेवा शुल्क">बुनियादी सेवा शुल्क</h2>
-    <div class="price">₹50 <small data-en="onwards" data-hi="से शुरू">से शुरू</small></div>
-    <p data-en="The basic assistance fee starts at ₹50. We will explain the total service cost before starting." data-hi="बुनियादी सहायता शुल्क ₹50 से शुरू होता है। काम शुरू करने से पहले कुल सेवा शुल्क बताया जाएगा।">बुनियादी सहायता शुल्क ₹50 से शुरू होता है। काम शुरू करने से पहले कुल सेवा शुल्क बताया जाएगा।</p>
-    <div class="fee-note">
-      <strong data-en="Please note" data-hi="ध्यान दें">ध्यान दें</strong>
-      <p data-en="Official application fees, printing and extra services may cost more." data-hi="सरकारी आवेदन शुल्क, प्रिंटिंग और अतिरिक्त सेवाओं का शुल्क अलग हो सकता है।">सरकारी आवेदन शुल्क, प्रिंटिंग और अतिरिक्त सेवाओं का शुल्क अलग हो सकता है।</p>
+<section class="section" id="services">
+  <div class="wrap">
+    <h2 data-i18n="s_title">सेवाएँ</h2>
+    <p class="sub" data-i18n="s_sub">अपनी ज़रूरत चुनें। बाकी हम समझाएँगे।</p>
+    <div class="grid3">
+      <article class="card"><svg class="ic lg"><use href="#i-job"/></svg><h3 data-i18n="s1">सरकारी नौकरी आवेदन सहायता</h3><p data-i18n="s1d">पात्रता समझने और नौकरी के आवेदन फॉर्म सही तरह भरने में मदद।</p><p class="price-line" data-i18n="s_price">₹50 से सहायता शुरू</p><button class="btn small" type="button" data-service="Government Job Application" data-i18n="s_cta">WhatsApp पर पूछें</button></article>
+      <article class="card"><svg class="ic lg"><use href="#i-scholar"/></svg><h3 data-i18n="s2">स्कॉलरशिप फॉर्म सहायता</h3><p data-i18n="s2d">स्कॉलरशिप फॉर्म और उनमें लगने वाले दस्तावेज़ों की जानकारी।</p><p class="price-line" data-i18n="s_price">₹50 से सहायता शुरू</p><button class="btn small" type="button" data-service="Scholarship Form" data-i18n="s_cta">WhatsApp पर पूछें</button></article>
+      <article class="card"><svg class="ic lg"><use href="#i-exam"/></svg><h3 data-i18n="s3">प्रतियोगी परीक्षा रजिस्ट्रेशन</h3><p data-i18n="s3d">परीक्षा रजिस्ट्रेशन, फोटो और हस्ताक्षर की ज़रूरतों में सहायता।</p><p class="price-line" data-i18n="s_price">₹50 से सहायता शुरू</p><button class="btn small" type="button" data-service="Competitive Exam Registration" data-i18n="s_cta">WhatsApp पर पूछें</button></article>
+      <article class="card"><svg class="ic lg"><use href="#i-college"/></svg><h3 data-i18n="s4">कॉलेज एडमिशन फॉर्म</h3><p data-i18n="s4d">एडमिशन और प्रवेश परीक्षा के आवेदन फॉर्म में मदद।</p><p class="price-line" data-i18n="s_price">₹50 से सहायता शुरू</p><button class="btn small" type="button" data-service="College Admission Form" data-i18n="s_cta">WhatsApp पर पूछें</button></article>
+      <article class="card"><svg class="ic lg"><use href="#i-docs"/></svg><h3 data-i18n="s5">दस्तावेज़ और फॉर्म मार्गदर्शन</h3><p data-i18n="s5d">फॉर्म में क्या माँगा गया है और दस्तावेज़ कैसे तैयार करें, यह समझें।</p><p class="price-line" data-i18n="s_price">₹50 से सहायता शुरू</p><button class="btn small" type="button" data-service="Document and Form Guidance" data-i18n="s_cta">WhatsApp पर पूछें</button></article>
+      <article class="card"><svg class="ic lg"><use href="#i-other"/></svg><h3 data-i18n="s6">अन्य ऑनलाइन आवेदन सहायता</h3><p data-i18n="s6d">कोई और ऑनलाइन फॉर्म? हमें बताइए, हम बताएँगे कि मदद कर सकते हैं या नहीं।</p><p class="price-line" data-i18n="s_price_ask">काम शुरू होने से पहले कीमत बताई जाएगी</p><button class="btn small" type="button" data-service="Other Online Application" data-i18n="s_cta">WhatsApp पर पूछें</button></article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section process">
-    <div class="section-title">
-      <span class="eyebrow" data-en="HOW IT WORKS" data-hi="काम कैसे होगा">काम कैसे होगा</span>
-      <h2 data-en="Just 3 simple steps" data-hi="बस 3 आसान कदम">बस 3 आसान कदम</h2>
-    </div>
-    <div class="step-card">
-      <span class="step-number">1</span>
-      <div><h3 data-en="Contact us" data-hi="संपर्क करें">संपर्क करें</h3><p data-en="Tell us which form you need help with." data-hi="बताएँ कि किस फॉर्म में मदद चाहिए।">बताएँ कि किस फॉर्म में मदद चाहिए।</p></div>
-    </div>
-    <div class="step-card">
-      <span class="step-number">2</span>
-      <div><h3 data-en="Know the charges" data-hi="शुल्क जानें">शुल्क जानें</h3><p data-en="Understand the process and cost first." data-hi="पहले प्रक्रिया और शुल्क समझें।">पहले प्रक्रिया और शुल्क समझें।</p></div>
-    </div>
-    <div class="step-card">
-      <span class="step-number">3</span>
-      <div><h3 data-en="Check your form" data-hi="फॉर्म जाँचें">फॉर्म जाँचें</h3><p data-en="Check all details before submitting." data-hi="सबमिट करने से पहले सारी जानकारी जाँचें।">सबमिट करने से पहले सारी जानकारी जाँचें।</p></div>
-    </div>
-  </section>
+<section class="section tint" id="jobs">
+  <div class="wrap">
+    <h2 data-i18n="j_title">नई भर्तियाँ और अपडेट</h2>
+    <p class="sub" data-i18n="j_sub">आवेदन से पहले आधिकारिक अधिसूचना में जानकारी ज़रूर जाँचें।</p>
+    <div id="jobList" class="grid2"></div>
+  </div>
+</section>
 
-  <section class="contact-section" id="contact">
-    <div class="contact-icon">💬</div>
-    <h2 data-en="Need help? Let's talk." data-hi="मदद चाहिए? हमसे बात करें।">मदद चाहिए? हमसे बात करें।</h2>
-    <p data-en="Choose a WhatsApp contact and tell us what you need." data-hi="WhatsApp पर संपर्क करें और अपनी जरूरत बताएँ।">WhatsApp पर संपर्क करें और अपनी जरूरत बताएँ।</p>
-    <a class="whatsapp-button" id="whatsapp1" href="#"><span>WhatsApp</span><span data-en="Contact 1 →" data-hi="संपर्क 1 →">संपर्क 1 →</span></a>
-    <a class="whatsapp-button second-contact" id="whatsapp2" href="#"><span>WhatsApp</span><span data-en="Contact 2 →" data-hi="संपर्क 2 →">संपर्क 2 →</span></a>
-  </section>
+<section class="section" id="how">
+  <div class="wrap">
+    <h2 data-i18n="h_title">कैसे काम करता है</h2>
+    <ol class="how">
+      <li><span class="num">1</span><h3 data-i18n="h1t">अपनी ज़रूरत की सेवा चुनें</h3><p data-i18n="h1d">हमारी सेवाओं में से फॉर्म का प्रकार चुनें।</p></li>
+      <li><span class="num">2</span><h3 data-i18n="h2t">FormSathi से संपर्क करें</h3><p data-i18n="h2d">WhatsApp पर संदेश भेजें और बताएँ कि किस फॉर्म में मदद चाहिए।</p></li>
+      <li><span class="num">3</span><h3 data-i18n="h3t">जाँचें और सुरक्षित तरीके से पूरा करें</h3><p data-i18n="h3d">आधिकारिक वेबसाइट पर अंतिम जमा करने से पहले अपनी सारी जानकारी खुद जाँचें।</p></li>
+    </ol>
+  </div>
+</section>
 
-  <section class="safety-note">
-    <h3 data-en="🔒 Your safety matters" data-hi="🔒 आपकी सुरक्षा जरूरी है">🔒 आपकी सुरक्षा जरूरी है</h3>
-    <p data-en="FormSathi is an independent assistance service, not a government website. Never share your password, OTP, bank PIN or payment PIN. Check every detail before submission." data-hi="FormSathi एक स्वतंत्र सहायता सेवा है, सरकारी वेबसाइट नहीं। अपना पासवर्ड, OTP, बैंक PIN या पेमेंट PIN किसी से साझा न करें। सबमिट करने से पहले जानकारी जाँचें।">FormSathi एक स्वतंत्र सहायता सेवा है, सरकारी वेबसाइट नहीं। अपना पासवर्ड, OTP, बैंक PIN या पेमेंट PIN किसी से साझा न करें। सबमिट करने से पहले जानकारी जाँचें।</p>
-  </section>
+<section class="section tint" id="pricing">
+  <div class="wrap narrow">
+    <h2 data-i18n="p_title">पारदर्शी कीमत</h2>
+    <ul class="ticks">
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="p1">बुनियादी सहायता ₹50 से शुरू होती है।</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="p2">आधिकारिक आवेदन शुल्क अलग है और आप उसे आधिकारिक वेबसाइट पर खुद भरते हैं।</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="p3">कोई अतिरिक्त शुल्क हो तो काम शुरू होने से पहले बताया जाएगा।</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="p4">कोई छिपा शुल्क नहीं।</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="wrap">
+    <h2 data-i18n="w_title">FormSathi क्यों चुनें</h2>
+    <div class="grid3 plain">
+      <div><h3 data-i18n="w1t">साफ़ मार्गदर्शन</h3><p data-i18n="w1d">हर फॉर्म में क्या चाहिए, सरल भाषा में।</p></div>
+      <div><h3 data-i18n="w2t">पारदर्शी कीमत</h3><p data-i18n="w2d">शुरू करने से पहले आपको खर्च पता होता है।</p></div>
+      <div><h3 data-i18n="w3t">विद्यार्थियों के अनुकूल</h3><p data-i18n="w3d">पहली बार आवेदन करने वालों के लिए सरल और धैर्यपूर्ण मदद।</p></div>
+      <div><h3 data-i18n="w4t">हिंदी और अंग्रेज़ी</h3><p data-i18n="w4d">जिस भाषा में सहज हों, उसमें सहायता लें।</p></div>
+      <div><h3 data-i18n="w5t">गोपनीयता का ध्यान</h3><p data-i18n="w5d">हम पासवर्ड, OTP या PIN कभी नहीं माँगते।</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section tint" id="about">
+  <div class="wrap narrow center">
+    <h2 data-i18n="a_title">संस्थापक के बारे में</h2>
+    <p class="quote" data-i18n="a_quote">एक सरल उद्देश्य के साथ बनाया गया: ऑनलाइन आवेदन को सबके लिए आसान बनाना।</p>
+    <p class="founder">AA — Adarsh Aman</p>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap narrow">
+    <h2 data-i18n="f_title">अक्सर पूछे जाने वाले प्रश्न</h2>
+    <details><summary data-i18n="q1">FormSathi क्या है?</summary><p data-i18n="a1">FormSathi एक स्वतंत्र सेवा है जो लोगों को ऑनलाइन आवेदन फॉर्म समझने और भरने में मदद करती है। यह सरकारी वेबसाइट नहीं है।</p></details>
+    <details><summary data-i18n="q2">सहायता का शुल्क कितना है?</summary><p data-i18n="a2">बुनियादी सहायता ₹50 से शुरू होती है। अगर किसी फॉर्म में ज़्यादा काम हो, तो शुरू करने से पहले कीमत बता दी जाती है।</p></details>
+    <details><summary data-i18n="q3">क्या सरकारी आवेदन शुल्क शामिल है?</summary><p data-i18n="a3">नहीं। आधिकारिक आवेदन शुल्क अलग है और आप उसे सीधे आधिकारिक वेबसाइट पर भरते हैं।</p></details>
+    <details><summary data-i18n="q4">क्या मुझे हिंदी में मदद मिल सकती है?</summary><p data-i18n="a4">हाँ। FormSathi हिंदी और अंग्रेज़ी दोनों में सहायता देता है।</p></details>
+    <details><summary data-i18n="q5">क्या FormSathi चयन की गारंटी देता है?</summary><p data-i18n="a5">नहीं। हम सिर्फ फॉर्म भरने में मदद करते हैं। चयन, स्कॉलरशिप और परिणाम पूरी तरह आधिकारिक संस्था पर निर्भर हैं।</p></details>
+    <details><summary data-i18n="q6">मेरी व्यक्तिगत जानकारी का क्या होता है?</summary><p data-i18n="a6">हम सिर्फ वही जानकारी माँगते हैं जो फॉर्म के लिए ज़रूरी है। हम पासवर्ड, OTP, UPI PIN, बैंक PIN या भुगतान की गोपनीय जानकारी कभी नहीं माँगते।</p></details>
+    <details><summary data-i18n="q7">आधिकारिक वेबसाइट से सीधे आवेदन कैसे करूँ?</summary><p data-i18n="a7">नौकरी या परीक्षा की आधिकारिक अधिसूचना खोलें और उसमें दिए आधिकारिक आवेदन लिंक का उपयोग करें। आप हमारी मदद के बिना भी खुद आवेदन कर सकते हैं।</p></details>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="wrap narrow center">
+    <h2 data-i18n="c_title">फॉर्म भरने में मदद चाहिए?</h2>
+    <p class="sub" data-i18n="c_p">फॉर्म का नाम लिखकर WhatsApp पर संदेश भेजें।</p>
+    <a class="btn primary" href="#" data-wa="general" data-i18n="c_btn">WhatsApp पर संपर्क करें</a>
+    <p class="fine" data-i18n="c_note">अपना पासवर्ड, OTP या PIN किसी को न बताएँ, हमें भी नहीं।</p>
+  </div>
+</section>
+
+<section class="section tint" id="legal">
+  <div class="wrap narrow">
+    <details id="privacy"><summary data-i18n="l1t">गोपनीयता नीति</summary><p data-i18n="l1">हम सिर्फ वही जानकारी लेते हैं जो आपके फॉर्म में मदद के लिए ज़रूरी है। हम पासवर्ड, OTP, UPI PIN, बैंक PIN या भुगतान की गोपनीय जानकारी न माँगते हैं, न रखते हैं। जब तक फॉर्म को सच में ज़रूरत न हो, संवेदनशील दस्तावेज़ न भेजें। यह सरल भाषा में सारांश है, कानूनी प्रमाणन नहीं।</p></details>
+    <details id="terms"><summary data-i18n="l2t">नियम और शर्तें</summary><p data-i18n="l2">FormSathi सिर्फ सहायता देता है। अंतिम जमा करने से पहले सारी जानकारी जाँचने की ज़िम्मेदारी आपकी है। आधिकारिक शुल्क अलग है। हम चयन, एडमिशन, स्कॉलरशिप या किसी भी परिणाम की गारंटी नहीं देते।</p></details>
+    <details id="disclaimer"><summary data-i18n="l3t">अस्वीकरण</summary><p data-i18n="l3">FormSathi एक स्वतंत्र सहायता सेवा है। यह कोई आधिकारिक सरकारी वेबसाइट नहीं है और किसी सरकारी संस्था से संबद्ध नहीं है। हर आवेदन और अधिसूचना को संबंधित आधिकारिक वेबसाइट पर ज़रूर सत्यापित करें।</p></details>
+  </div>
+</section>
+
 </main>
 
 <footer class="footer">
-  <a class="brand" href="#home">
-    <img src="FormSathi Green Education Logo.png" alt="FormSathi logo">
-    <span class="brand-name">Form<span>Sathi</span></span>
-  </a>
-  <p>© <span id="year"></span> FormSathi</p>
-  <p data-en="Online form assistance" data-hi="ऑनलाइन फॉर्म सहायता">ऑनलाइन फॉर्म सहायता</p>
-  <p class="founder">AA <span data-en="· Adarsh Aman" data-hi="· आदर्श अमन">· आदर्श अमन</span></p>
+  <div class="wrap foot-grid">
+    <div>
+      <a class="brand" href="#home"><img src="FormSathi%20Green%20Education%20Logo.png" alt="FormSathi लोगो" width="32" height="32"><span>FormSathi</span></a>
+      <p class="fine" data-i18n="foot_disc">स्वतंत्र सहायता सेवा। किसी सरकारी संस्था से संबद्ध नहीं।</p>
+    </div>
+    <nav class="foot-links" aria-label="फुटर मेन्यू">
+      <a href="#services" data-i18n="nav_services">सेवाएँ</a>
+      <a href="#jobs" data-i18n="nav_jobs">नई भर्तियाँ</a>
+      <a href="#privacy" data-i18n="l1t">गोपनीयता नीति</a>
+      <a href="#terms" data-i18n="l2t">नियम और शर्तें</a>
+      <a href="#disclaimer" data-i18n="l3t">अस्वीकरण</a>
+    </nav>
+  </div>
+  <div class="wrap copy">© <span id="year"></span> FormSathi · AA — Adarsh Aman</div>
 </footer>
 
 <script src="script.js"></script>
